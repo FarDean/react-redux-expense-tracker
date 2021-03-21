@@ -7,7 +7,7 @@ export const expenseSlice = createSlice({
 	},
 	reducers: {
 		add: (state, action) => state.expenses.push(action.payload),
-		getAll: state => state.expenses,
+		getAll: (state, action) => (state.expenses = action.payload),
 		getOne: (state, action) => state.expenses.find(x => x.id === action.payload),
 		remove: (state, action) => state.expenses.filter(x => x.id !== action.payload),
 	},

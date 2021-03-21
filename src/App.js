@@ -1,11 +1,15 @@
 import MainRouter from "./MainRouter";
 import { Provider } from "react-redux";
 import store from "./app/store";
+import DateFnsUtils from "@date-io/date-fns";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 
 function App() {
 	return (
 		<Provider store={store}>
-			<MainRouter />
+			<MuiPickersUtilsProvider utils={DateFnsUtils}>
+				<MainRouter />
+			</MuiPickersUtilsProvider>
 		</Provider>
 	);
 }
