@@ -20,7 +20,10 @@ export const AddExpense = () => {
 	const classes = useStyles();
 	const today = new Date().toJSON().toString().slice(0, 19);
 
-	const [expense, setExpense] = useState(null);
+	// const [expense, setExpense] = useState({
+	// 	firstName: "string",
+	// 	emailAddress: "string",
+	// });
 
 	// const [expense, setExpense] = useState({
 	// 	id: new Date().getTime(),
