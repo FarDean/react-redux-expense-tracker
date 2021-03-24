@@ -1,11 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Home() {
+	let location = useLocation();
 	return (
 		<div>
 			Home
-			<Link to="/add">Add Expense</Link>
+			<Link
+				to={{
+					pathname: "/add",
+					state: { background: location },
+				}}
+			>
+				Add Expense
+			</Link>
 		</div>
 	);
 }
