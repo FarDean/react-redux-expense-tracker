@@ -10,6 +10,9 @@ const useStyles = makeStyles(theme => ({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",
+		width: "70%",
+		margin: "0 auto",
+		border: "1px solid black",
 	},
 	paper: {
 		backgroundColor: theme.palette.background.paper,
@@ -41,7 +44,6 @@ export const Modal = ({ children }) => {
 			open={open}
 			onClose={handleClose}
 			closeAfterTransition
-			BackdropComponent={Backdrop}
 			BackdropProps={{
 				timeout: 500,
 			}}

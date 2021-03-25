@@ -1,7 +1,4 @@
 import { Route, Switch, useLocation } from "react-router-dom";
-// import Home from "./components/Home";
-// import { Modal } from "./components/Modal";
-// import { AddExpense } from "./components/AddExpense";
 import Home from "./Home";
 import { Modal } from "./Modal";
 import { AddExpense } from "./AddExpense";
@@ -9,6 +6,7 @@ import { AddExpense } from "./AddExpense";
 export const ModalSwitch = () => {
 	let location = useLocation();
 	let background = location.state && location.state.background;
+	console.log(location);
 
 	return (
 		<div>
