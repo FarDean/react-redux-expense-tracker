@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: "center",
 		width: "70%",
 		margin: "0 auto",
-		border: "1px solid black",
 	},
 	paper: {
 		backgroundColor: theme.palette.background.paper,
@@ -28,7 +27,8 @@ export const Modal = ({ children }) => {
 
 	let history = useHistory();
 
-	const handleClose = () => {
+	const handleClose = e => {
+		e.stopPropagation();
 		setOpen(false);
 		history.goBack();
 	};
@@ -43,12 +43,13 @@ export const Modal = ({ children }) => {
 			className={classes.modal}
 			open={open}
 			onClose={handleClose}
-			closeAfterTransition
 			BackdropProps={{
 				timeout: 500,
 			}}
 		>
-			<Fade in={open}>{children}</Fade>
+			<Fade in={open}>
+				<div className={classes.paper}>{children}</div>
+			</Fade>
 		</ModalUi>
 	);
 };
