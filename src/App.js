@@ -1,6 +1,6 @@
 import MainRouter from "./MainRouter";
 import { Provider } from "react-redux";
-import store from "./app/store";
+import store from "./redux/store";
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 

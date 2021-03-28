@@ -1,10 +1,17 @@
 import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
-import { ModalSwitch } from "./components/ModalSwitch";
+import { AppWrapper } from "./app/AppWrapper";
+import { AddExpense } from "./components/AddExpense";
 
 function MainRouter() {
 	return (
 		<Router>
-			<ModalSwitch />
+			<AppWrapper>
+				<Switch>
+					<Route path="/add">
+						<AddExpense />
+					</Route>
+				</Switch>
+			</AppWrapper>
 		</Router>
 	);
 }
